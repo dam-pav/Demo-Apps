@@ -1,0 +1,31 @@
+{
+  "folders": [
+    {
+      "path": "Demo"
+    },
+    {
+      "path": "BC-Dev-Toolset"
+    }
+  ],
+  "settings": {
+    "bcdevtoolset": [
+      {
+        "country": "w1",
+        "configurations": [
+          {
+            "name": "sample",
+            "serverType": "",
+            "targetType": "",
+            "server": "",
+            "serverInstance": "",
+            "port": "",
+            "environmentName": "",
+            "tenant": "",
+            "authentication": ""
+          }
+        ]
+      }
+    ],
+    "powershell.cwd": "BC-Dev-Toolset"
+  }
+}

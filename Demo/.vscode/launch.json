@@ -1,5 +1,27 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ScenarioSorting Default Dev Container",
+      "request": "launch",
+      "type": "al",
+      "environmentType": "Sandbox",
+      "server": "http://ScenarioSorting",
+      "serverInstance": "BC",
+      "tenant": "default",
+      "authentication": "UserPassword",
+      "startupObjectId": 50100,
+      "startupObjectType": "Page",
+      "breakOnError": "All",
+      "launchBrowser": true,
+      "enableLongRunningSqlStatements": true,
+      "enableSqlInformationDebugger": true,
+      "usePublicURLFromServer": true,
+      "schemaUpdateMode": "ForceSync",
+      "forceUpgrade": true,
+      "breakOnRecordWrite": "None",
+      "longRunningSqlStatementsThreshold": 500,
+      "numberOfSqlStatements": 10
+    }
+  ]
 }

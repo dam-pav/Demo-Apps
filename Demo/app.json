@@ -1,7 +1,7 @@
 {
-  "id": "92ed7647-6b01-4967-9f5e-733b85dbcd46",
-  "name": "Demo",
-  "publisher": "dam-pav",
+  "id": "5af6d1d8-a910-4d62-ad31-52fe4754cab6",
+  "name": "ScenarioSorting",
+  "publisher": "Default Publisher",
   "version": "1.0.0.0",
   "brief": "",
   "description": "",
@@ -13,19 +13,20 @@
   "dependencies": [],
   "screenshots": [],
   "platform": "1.0.0.0",
-  "application": "22.0.0.0",
+  "application": "23.0.0.0",
   "idRanges": [
     {
       "from": 50100,
-      "to": 50199
+      "to": 50149
     }
-  ],
-  "features": [
-    "NoImplicitWith"
   ],
   "resourceExposurePolicy": {
     "allowDebugging": true,
-    "allowDownloadingSource": false,
-    "includeSourceInSymbolFile": false
-  }
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "12.0",
+  "features": [
+    "NoImplicitWith"
+  ]
 }
