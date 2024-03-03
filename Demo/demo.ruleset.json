@@ -1,0 +1,27 @@
+{
+"name": "BC",
+"description": "Rules",
+"generalAction": "Hidden",
+"rules": [
+        {
+            "id": "AA0218",
+            "action": "Hidden",
+            "justification": "No Tooltip In this Project For Now"
+        },
+        {
+            "id": "LC0002",
+            "action": "Hidden",
+            "justification": "We are not justiying commits"
+        },
+        {
+            "id": "AA0072",
+            "action": "Hidden",
+            "justification": "Weird rule, would follow it it worked"
+        },
+        {
+            "id": "AS0092",
+            "action": "Hidden",
+            "justification": "No telemetry is setup for this app"
+        }
+    ]
+}

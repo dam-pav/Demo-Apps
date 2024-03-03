@@ -2,12 +2,14 @@ table 50100 "PTE Demo Scenario"
 {
     Caption = 'PTE Demo Scenario';
     DataClassification = CustomerContent;
+    Permissions = 
+        tabledata "PTE Demo Scenario" = R;
 
     fields
     {
         field(1; "Demo Scenario"; Enum "PTE Demo Scenario")
         {
-            Caption = 'Integration Scenario';
+            Caption = 'Demo Scenario';
         }
         field(2; "Sort Order"; Text[50])
         {

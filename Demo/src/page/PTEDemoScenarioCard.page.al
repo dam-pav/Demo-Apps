@@ -15,7 +15,7 @@ page 50101 "PTE Demo Scenario Card"
             {
                 Caption = 'General';
 
-                field("Integration Scenario"; Rec."Demo Scenario")
+                field("Demo Scenario"; Rec."Demo Scenario")
                 {
                     ApplicationArea = All;
                 }

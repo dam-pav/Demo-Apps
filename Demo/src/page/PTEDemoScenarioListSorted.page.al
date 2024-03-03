@@ -41,16 +41,14 @@ page 50100 "PTE Demo Scenario List Sorted"
     }
 
     var
-        ChangeDetection: Codeunit "PTE Demo Change Detection";
-        ERR_NODATAErr: Label 'There''s no source data available';
-        ERR_NOTEMPTYErr: Label 'Setup should be empty to be able to copy records';
+        DemoChangeDetection: Codeunit "PTE Demo Change Detection";
 
     trigger OnOpenPage()
     var
         DemoScenarioEnum: Enum "PTE Demo Scenario";
         ChangeType: Option None,Insert,Modify,Rename,Delete;
     begin
-        ChangeDetection.SetInstance();
+        DemoChangeDetection.SetInstance();
         InitTempRec(DemoScenarioEnum, ChangeType::None);
     end;
 
@@ -59,7 +57,7 @@ page 50100 "PTE Demo Scenario List Sorted"
         DemoScenarioEnum: Enum "PTE Demo Scenario";
         ChangeType: Option None,Insert,Modify,Rename,Delete;
     begin
-        if ChangeDetection.IsChanged(DemoScenarioEnum, ChangeType) then
+        if DemoChangeDetection.IsChanged(DemoScenarioEnum, ChangeType) then
             InitTempRec(DemoScenarioEnum, ChangeType);
     end;
 
