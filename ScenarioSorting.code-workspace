@@ -11,6 +11,7 @@
     "bcdevtoolset": [
       {
         "country": "w1",
+        "selectArtifact": "Latest",
         "configurations": [
           {
             "name": "sample",

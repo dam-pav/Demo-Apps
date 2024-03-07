@@ -1,4 +1,4 @@
-*.app
+﻿*.app
 *.flf
 *.bclicense
 *.g.xlf
@@ -19,3 +19,5 @@ rad.json
 .snapshots/
 cache_*
 ~$*
+BC-Dev-Toolset/
+launch.json
