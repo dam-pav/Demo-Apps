@@ -1,7 +1,10 @@
 {
   "folders": [
     {
-      "path": "Demo"
+      "path": "ScenarioSorting"
+    },
+    {
+      "path": "ErrorManagement"
     },
     {
       "path": "BC-Dev-Toolset"
@@ -11,7 +14,7 @@
     "bcdevtoolset": [
       {
         "country": "w1",
-        "selectArtifact": "Latest",
+        "selectArtifact": "Closest",
         "configurations": [
           {
             "name": "sample",
