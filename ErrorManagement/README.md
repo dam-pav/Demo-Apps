@@ -6,7 +6,7 @@ This all started with the introduction of the TryFunction procedures. We used th
 
 But Microsoft didn't stop there. The development team started introducing the concept of the Error Management framework starting (from what I can tell) BC14, and from there it matured into an important tool for the improvements in the various aspects of design for User Experience, from empowering users in handling exceptions, to enable support and ultimately the development teams to observe and detect the issues encountered during usage.
 
-The framework can also take off some of the development load especially when designing processing reports, when stopping at the first exception encountered is not desirable and on the other hand a report on the exception is a requirement.
+The framework can also take off some of the development load especially when designing processing reports, when stopping at the first exception encountered is not desirable and on the other hand a report on the exceptions found is a requirement.
 
 The Error Management is therefore one of the most essential frameworks to know and implement in your solutions.
 
