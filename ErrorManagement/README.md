@@ -12,7 +12,7 @@ The Error Management is therefore one of the most essential frameworks to know a
 
 ## What can we see in the demo
 
-The demo was first started for BC19. The "Error Messages" list looks quite a bi different since then. MS removed most of the original columns, I found them quite informative, but I guess the ruling that this wass still too much for the regular user. The new concept of providing a one-click suggested solution is not part of this demo, yet.
+The demo was first started for BC19. The "Error Messages" list looks quite a bit different since then. MS removed most of the original columns, I found them quite informative, but I guess the ruling was that this was still too much for the regular user. The new concept of providing a one-click suggested solution is not part of this demo, yet.
 
 The concept of providing URLs pointing to pages providing in-depth explanation of the context seems also to be out of fashion but the demo still shows both how to provide custom links and how to use them.
 
