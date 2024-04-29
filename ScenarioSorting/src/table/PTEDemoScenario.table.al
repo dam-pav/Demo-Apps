@@ -1,8 +1,8 @@
 table 50100 "PTE Demo Scenario"
 {
-    Caption = 'PTE Demo Scenario';
+    Caption = 'Demo Scenario';
     DataClassification = CustomerContent;
-    Permissions = 
+    Permissions =
         tabledata "PTE Demo Scenario" = R;
 
     fields

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="sl-SI" original="Demo - Scenario Sorting.g.xlf">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 1623903184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PTE Demo Scenario</source>
+          <target>Demo scenarij</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table PTE Demo Scenario - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1623903184 - Field 2195300439 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Demo Scenario</source>
+          <target>Demo scenarij</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table PTE Demo Scenario - Field Demo Scenario - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1623903184 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Opis</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table PTE Demo Scenario - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1623903184 - Field 3915705456 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sort Order</source>
+          <target>Vrstni red</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table PTE Demo Scenario - Field Sort Order - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1978986948 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Demo Scenario Card</source>
+          <target>Kartica demo scenarija</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PTE Demo Scenario Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1978986948 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target>Splošno</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PTE Demo Scenario Card - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 580541863 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Demo Scenarios</source>
+          <target>Demo scenariji</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PTE Demo Scenario List Sorted - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1623903184 - EnumValue 2855218424 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Five</source>
+          <target>Pet</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum PTE Demo Scenario - EnumValue Five - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1623903184 - EnumValue 344621458 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Four</source>
+          <target>Štiri</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum PTE Demo Scenario - EnumValue Four - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1623903184 - EnumValue 3592160600 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>One</source>
+          <target>Ena</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum PTE Demo Scenario - EnumValue One - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1623903184 - EnumValue 922707306 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Three</source>
+          <target>Tri</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum PTE Demo Scenario - EnumValue Three - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1623903184 - EnumValue 229761720 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Two</source>
+          <target>Dva</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum PTE Demo Scenario - EnumValue Two - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 1834312821 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Demo</source>
+          <target></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet Demo - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
