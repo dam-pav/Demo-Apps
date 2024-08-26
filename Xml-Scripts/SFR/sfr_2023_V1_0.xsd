@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="AjpesDokument">
+		<xs:annotation>
+			<xs:documentation>root</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Ident">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="T_Ident"/>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="OsnovniPodatki" type="T_OsnovniPodatki"/>
+				<xs:element name="Obrazci" type="T_Obrazci"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Datum" type="xs:date"/>
+	<xs:element name="DavcnaStevilka">
+		<xs:simpleType>
+			<xs:restriction base="xs:positiveInteger">
+				<xs:minInclusive value="10000000"/>
+				<xs:maxInclusive value="99999999"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Email">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="\w+([-+.+_]\w+)*@\w+([-+_+.]\w+)*\.\w+([-+.+_]\w+)*"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Ime">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="2"/>
+				<xs:maxLength value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Kraj">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="2"/>
+				<xs:maxLength value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="MaticnaStevilka10">
+		<xs:simpleType>
+			<xs:restriction base="xs:positiveInteger">
+				<xs:minInclusive value="1000000000"/>
+				<xs:maxInclusive value="9999999999"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="NacinPredlozitve">
+		<xs:simpleType>
+			<xs:restriction base="xs:NMTOKEN">
+				<xs:enumeration value="SPLET"/>
+				<xs:enumeration value="DISKETA"/>
+				<xs:enumeration value="EPOSTA"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="OdgovornaOseba">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="2"/>
+				<xs:maxLength value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Sedez">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="2"/>
+				<xs:maxLength value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Sektor">
+		<xs:simpleType>
+			<xs:restriction base="xs:positiveInteger">
+				<xs:minInclusive value="10"/>
+				<xs:maxInclusive value="99999"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="SifUpor">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[0-9]{5}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="TelefonskaStevilka">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="7"/>
+				<xs:maxLength value="20"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Ura" type="xs:time"/>
+	<xs:element name="Verzija" type="xs:string"/>
+	<xs:element name="VodjaPodjetja">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="2"/>
+				<xs:maxLength value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="VsePravice" type="xs:string"/>
+	<xs:complexType name="T_Aop">
+		<xs:sequence>
+			<xs:element name="P" type="T_P" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="100"/>
+					<xs:maxInclusive value="627"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="T_Ident">
+		<xs:sequence>
+			<xs:element ref="Datum"/>
+			<xs:element ref="Ura"/>
+			<xs:element ref="NacinPredlozitve" minOccurs="0"/>
+			<xs:element name="Program" type="T_Program" minOccurs="0"/>
+			<xs:element ref="VsePravice" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="vrsta" use="required" fixed="sfr_2023">
+			<xs:simpleType>
+				<xs:restriction base="xs:string"/>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="krog" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="0"/>
+					<xs:maxInclusive value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="T_Obrazci">
+		<xs:sequence>
+			<xs:element name="Obrazec" type="T_Obrazec" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T_Obrazec">
+		<xs:sequence>
+			<xs:element name="Aop" type="T_Aop" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="sfr"/>
+					<xs:enumeration value="sob"/>
+					<xs:enumeration value="trs"/>
+					<xs:enumeration value="tob"/>
+					<xs:enumeration value="vsfr"/>
+					<xs:enumeration value="vsob"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="krog" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="0"/>
+					<xs:maxInclusive value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="T_OsnovniPodatki">
+		<xs:sequence>
+			<xs:element ref="SifUpor"/>
+			<xs:element ref="MaticnaStevilka10"/>
+			<xs:element ref="DavcnaStevilka"/>
+			<xs:element ref="Sektor"/>
+			<xs:element ref="Ime"/>
+			<xs:element ref="Sedez"/>
+			<xs:element ref="OdgovornaOseba"/>
+			<xs:element ref="TelefonskaStevilka"/>
+			<xs:element ref="Email"/>
+			<xs:element ref="VodjaPodjetja"/>
+			<xs:element ref="Datum"/>
+			<xs:element ref="Kraj"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T_P">
+		<xs:simpleContent>
+			<xs:extension base="xs:double">
+				<xs:attribute name="s" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:minInclusive value="1"/>
+							<xs:maxInclusive value="22"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="T_Program">
+		<xs:sequence>
+			<xs:element ref="Ime"/>
+			<xs:element ref="Verzija"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
