@@ -1,6 +1,9 @@
 {
   "folders": [
     {
+      "path": "XmlOperations"
+    },
+    {
       "path": "ScenarioSorting"
     },
     {
@@ -30,6 +33,7 @@
         ]
       }
     ],
-    "powershell.cwd": "BC-Dev-Toolset"
+    "powershell.cwd": "BC-Dev-Toolset",
+    "liveServer.settings.multiRootWorkspaceName": "BC-Dev-Toolset"
   }
 }
