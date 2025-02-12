@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <script src="markdown.js"></script>
+        <script src="marked.min.js"></script>
+        <script type="text/javascript" src="purify.js"></script>
+        <link rel="stylesheet" href="markdown.css">
+    </head>
+    <body>
+        <div id="controlAddIn" style="height:100%; width:100%" background-color="red">
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Init(JSON.parse('{"lblSearchFor":"Search...","lblReplaceWith":"Replace with...","lblIgnoreCase":"Ignore case","lblFindNext":"Find Next","lblReplaceNext":"Replace Next"}'));
+            });
+        </script>
+    </body>
+</html>

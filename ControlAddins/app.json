@@ -1,6 +1,6 @@
 {
-  "id": "5af6d1d8-a910-4d62-ad31-52fe4754cab6",
-  "name": "Demo - Scenario Sorting",
+  "id": "e9d1b515-0296-43e2-9c5e-63a5d055741b",
+  "name": "Demo - Plain Text & Markdown Editors",
   "publisher": "dam-pav",
   "version": "25.0.0.0",
   "brief": "",
@@ -16,8 +16,8 @@
   "application": "25.0.0.0",
   "idRanges": [
     {
-      "from": 50100,
-      "to": 50109
+      "from": 50130,
+      "to": 50139
     }
   ],
   "resourceExposurePolicy": {
@@ -27,7 +27,6 @@
   },
   "runtime": "14.0",
   "features": [
-    "NoImplicitWith",
-    "TranslationFile" 
+    "NoImplicitWith"
   ]
 }

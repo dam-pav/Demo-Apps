@@ -2,7 +2,7 @@
   "id": "ded98799-39a7-4380-b856-a38a700e279c",
   "name": "Demo - Error Management",
   "publisher": "dam-pav",
-  "version": "23.0.0.0",
+  "version": "25.0.0.0",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -13,7 +13,7 @@
   "dependencies": [],
   "screenshots": [],
   "platform": "1.0.0.0",
-  "application": "23.0.0.0",
+  "application": "25.0.0.0",
   "idRanges": [
     {
       "from": 50110,
@@ -25,7 +25,7 @@
     "allowDownloadingSource": true,
     "includeSourceInSymbolFile": true
   },
-  "runtime": "12.0",
+  "runtime": "14.0",
   "features": [
     "NoImplicitWith"
   ]
