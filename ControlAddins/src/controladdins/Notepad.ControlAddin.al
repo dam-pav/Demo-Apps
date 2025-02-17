@@ -8,10 +8,12 @@ controladdin "Notepad"
 
     event ControlReady();
     event SaveRequested(data: Text);
-    event ContentChanged(data: Text);
+    event OnChange(data: Text);
+    event OnFocusOut(data: Text);
     event OnAfterInit();
 
     procedure Init(jsonLabels: JsonObject);
     procedure Load(data: Text);
+    procedure SetEditable(editable: Boolean);
     procedure RequestSave();
 }

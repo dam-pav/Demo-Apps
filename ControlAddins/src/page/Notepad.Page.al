@@ -51,7 +51,12 @@ page 50130 "Notepad"
                     DownloadFromStream(InStream, ExportTxt, '', '*.txt', savedFileName);
                 end;
 
-                trigger ContentChanged(data: Text)
+                trigger OnChange(data: Text)
+                begin
+                    notepadText := data;
+                end;
+
+                trigger OnFocusOut(data: Text)
                 begin
                     notepadText := data;
                 end;

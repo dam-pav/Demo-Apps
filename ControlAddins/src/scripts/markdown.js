@@ -135,9 +135,7 @@ function Init(jsonLabels) {
 function Load(data) {
     const textarea = document.getElementById('markdown-editor');
     if (textarea) {
-        textarea.focus();
-        document.execCommand('selectAll', false, null);
-        document.execCommand('insertText', false, data);
+        textarea.value = data;
     }
 }
 

@@ -19,6 +19,11 @@
   padding: 10px;
 }
 
+#notepad:read-only {
+  background-color: #f6f7f8;
+  border: none;
+}
+
 label{
   margin-right: 5px;
 }

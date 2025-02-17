@@ -93,11 +93,11 @@ function Init(jsonLabels) {
     div.appendChild(replaceButton);
 
     textarea.addEventListener('change', function() {
-        Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("ContentChanged",[textarea.value]);
+        Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("OnChange",[textarea.value]);
     });
 
     textarea.addEventListener('focusout', function() {
-        Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("ContentChanged",[textarea.value]);
+        Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("OnFocusOut",[textarea.value]);
     });
 
     Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("OnAfterInit",[]);
@@ -106,9 +106,14 @@ function Init(jsonLabels) {
 function Load(data) {
     const textarea = document.getElementById('notepad');
     if (textarea) {
-        textarea.focus();
-        document.execCommand('selectAll', false, null);
-        document.execCommand('insertText', false, data);
+        textarea.value = data;
+    }
+}
+
+function SetEditable(editable) {
+    const textarea = document.getElementById('notepad');
+    if (textarea) {
+        textarea.readOnly = !editable;
     }
 }
 
