@@ -1,14 +1,21 @@
 function Init(jsonLabels) {
-    var control = document.getElementById("controlAddIn");
-    control.innerHTML = "";
+    var controladdin = document.getElementById("controlAddIn");
+    if (jsonLabels.isSearchAreaCollapsible == true) {
+        controladdin.classList.add('search-collapsed');
+        }
+    controladdin.innerHTML = "";
 
-    const div = document.createElement('div');
-    div.id = 'markdown-container';
-    control.appendChild(div);
+    const container = document.createElement('div');
+    container.id = 'markdown-container';
+    controladdin.appendChild(container);
 
     const textarea = document.createElement('textarea');
     textarea.id = 'markdown-editor';
-    div.appendChild(textarea);
+    container.appendChild(textarea);
+
+    const viewarea = document.createElement('div');
+    viewarea.id = 'markdown-view';
+    container.appendChild(viewarea);
 
     textarea.addEventListener('dragover', function(event) {
         event.preventDefault();
@@ -29,49 +36,42 @@ function Init(jsonLabels) {
     });
 
     textarea.addEventListener('input', function () {
-        const markdownEditor = document.getElementById('markdown-editor');
-        const markdownView = document.getElementById('markdown-view');
-        const htmlValue = marked.parse(markdownEditor.value);
-        markdownView.innerHTML = DOMPurify.sanitize(htmlValue,
+        const htmlValue = marked.parse(textarea.value);
+        viewarea.innerHTML = DOMPurify.sanitize(htmlValue,
             {USE_PROFILES: {html: true}});
     });
 
     //oogly workaround because @media not working as expected in css, doesn't snap back to 'auto', keeps last manual height instead
     window.addEventListener('resize', function() {
-        var markdownEditor = document.getElementById('markdown-editor');
         if (window.innerWidth >= 800) {
-            markdownEditor.style.height = 'auto';
+            textarea.style.height = 'auto';
         }
     });
 
-    const previewDiv = document.createElement('div');
-    previewDiv.id = 'markdown-view';
-    div.appendChild(previewDiv);
-
     //find/replace
-    const divSearch = document.createElement('div');
-    divSearch.id = 'search-container';
-    control.appendChild(divSearch);
+    const searcharea = document.createElement('div');
+    searcharea.id = 'searcharea';
+    controladdin.appendChild(searcharea);
 
     const searchInput = document.createElement('input');
     searchInput.id = 'searchInput';
     searchInput.placeholder = jsonLabels.lblSearchFor;
-    divSearch.appendChild(searchInput);
-
+    searcharea.appendChild(searchInput);
+    
     const replaceInput = document.createElement('input');
     replaceInput.id = 'replaceInput';
     replaceInput.placeholder = jsonLabels.lblReplaceWith;
-    divSearch.appendChild(replaceInput);
+    searcharea.appendChild(replaceInput);
 
     const caseCheckbox = document.createElement('input');
     caseCheckbox.type = 'checkbox';
     caseCheckbox.id = 'caseCheckbox';
-    divSearch.appendChild(caseCheckbox);
+    searcharea.appendChild(caseCheckbox);
 
     const caseLabel = document.createElement('label');
     caseLabel.htmlFor = 'caseCheckbox';
     caseLabel.innerText = jsonLabels.lblIgnoreCase;
-    divSearch.appendChild(caseLabel);
+    searcharea.appendChild(caseLabel);
 
     const searchButton = document.createElement('button');
     searchButton.innerText = jsonLabels.lblFindNext;
@@ -93,7 +93,7 @@ function Init(jsonLabels) {
             textarea.focus();
         }
     };
-    divSearch.appendChild(searchButton);
+    searcharea.appendChild(searchButton);
 
     const replaceButton = document.createElement('button');
     replaceButton.innerText = jsonLabels.lblReplaceNext;
@@ -119,23 +119,48 @@ function Init(jsonLabels) {
             document.execCommand('insertText', false, replaceValue);
         }
     };
-    divSearch.appendChild(replaceButton);
+    searcharea.appendChild(replaceButton);
 
     textarea.addEventListener('change', function() {
-        Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("ContentChanged",[textarea.value]);
+        Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("OnChange",[textarea.value]);
     });
 
     textarea.addEventListener('focusout', function() {
-        Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("ContentChanged",[textarea.value]);
+        Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("OnFocusOut",[textarea.value]);
     });
 
+    controladdin.addEventListener('focusin', function() {
+        if (textarea.readOnly == false) {
+            controladdin.classList.remove('search-collapsed');
+        }
+    });
+
+    controladdin.addEventListener('focusout', function(event) {
+        if (jsonLabels.isSearchAreaCollapsible == true) {
+            if (!searcharea.contains(event.relatedTarget)) {
+                controladdin.classList.add('search-collapsed');
+            }
+        }
+    });
+    
     Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("OnAfterInit",[]);
 }
 
 function Load(data) {
     const textarea = document.getElementById('markdown-editor');
+    const viewarea = document.getElementById('markdown-view');
     if (textarea) {
         textarea.value = data;
+        const htmlValue = marked.parse(data);
+        viewarea.innerHTML = DOMPurify.sanitize(htmlValue,
+            {USE_PROFILES: {html: true}});
+    }
+}
+
+function SetEditable(editable) {
+    const textarea = document.getElementById('markdown-editor');
+    if (textarea) {
+        textarea.readOnly = !editable;
     }
 }
 

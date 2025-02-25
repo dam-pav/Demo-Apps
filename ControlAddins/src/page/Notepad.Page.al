@@ -118,6 +118,7 @@ page 50130 "Notepad"
 
     trigger OnInit()
     begin
+        jsonLabels.Add('isSearchAreaCollapsible', false);
         jsonLabels.Add('lblSearchFor', lblSearch);
         jsonLabels.Add('lblReplaceWith', lblReplaceWith);
         jsonLabels.Add('lblIgnoreCase', lblIgnoreCase);

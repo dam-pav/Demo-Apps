@@ -10,7 +10,8 @@ controladdin "Markdown"
 
     event ControlReady();
     event SaveRequested(data: Text);
-    event ContentChanged(data: Text);
+    event OnChange(data: Text);
+    event OnFocusOut(data: Text);
     event OnAfterInit();
 
     procedure Init(jsonLabels: JsonObject);

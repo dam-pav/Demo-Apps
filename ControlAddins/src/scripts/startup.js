@@ -4,6 +4,7 @@ var iframe = window.frameElement;
 iframe.parentElement.style.display = "flex";
 iframe.parentElement.style.flexDirection = "column";
 iframe.parentElement.style.flexGrow = "1";
+iframe.parentElement.style.height = "100%";
 
 iframe.style.removeProperty("height");
 iframe.style.removeProperty("min-height");

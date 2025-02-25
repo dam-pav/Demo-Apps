@@ -1,10 +1,13 @@
 function Init(jsonLabels) {
-    var div = document.getElementById("controlAddIn");
-    div.innerHTML = "";
+    var controladdin = document.getElementById("controlAddIn");
+    if (jsonLabels.isSearchAreaCollapsible == true) {
+        controladdin.classList.add('search-collapsed');
+        }
+    controladdin.innerHTML = "";
 
     const textarea = document.createElement('textarea');
     textarea.id = 'notepad';
-    div.appendChild(textarea);
+    controladdin.appendChild(textarea);
 
     textarea.addEventListener('dragover', function(event) {
         event.preventDefault();
@@ -24,25 +27,29 @@ function Init(jsonLabels) {
         }
     });
 
+    const searcharea = document.createElement('div');
+    searcharea.id = 'searcharea';
+    controladdin.appendChild(searcharea);
+
     const searchInput = document.createElement('input');
     searchInput.id = 'searchInput';
     searchInput.placeholder = jsonLabels.lblSearchFor;
-    div.appendChild(searchInput);
-
+    searcharea.appendChild(searchInput);
+    
     const replaceInput = document.createElement('input');
     replaceInput.id = 'replaceInput';
     replaceInput.placeholder = jsonLabels.lblReplaceWith;
-    div.appendChild(replaceInput);
+    searcharea.appendChild(replaceInput);
 
     const caseCheckbox = document.createElement('input');
     caseCheckbox.type = 'checkbox';
     caseCheckbox.id = 'caseCheckbox';
-    div.appendChild(caseCheckbox);
+    searcharea.appendChild(caseCheckbox);
 
     const caseLabel = document.createElement('label');
     caseLabel.htmlFor = 'caseCheckbox';
     caseLabel.innerText = jsonLabels.lblIgnoreCase;
-    div.appendChild(caseLabel);
+    searcharea.appendChild(caseLabel);
 
     const searchButton = document.createElement('button');
     searchButton.innerText = jsonLabels.lblFindNext;
@@ -64,7 +71,7 @@ function Init(jsonLabels) {
             textarea.focus();
         }
     };
-    div.appendChild(searchButton);
+    searcharea.appendChild(searchButton);
 
     const replaceButton = document.createElement('button');
     replaceButton.innerText = jsonLabels.lblReplaceNext;
@@ -90,7 +97,7 @@ function Init(jsonLabels) {
             document.execCommand('insertText', false, replaceValue);
         }
     };
-    div.appendChild(replaceButton);
+    searcharea.appendChild(replaceButton);
 
     textarea.addEventListener('change', function() {
         Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("OnChange",[textarea.value]);
@@ -100,6 +107,20 @@ function Init(jsonLabels) {
         Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("OnFocusOut",[textarea.value]);
     });
 
+    controladdin.addEventListener('focusin', function() {
+        if (textarea.readOnly == false) {
+            controladdin.classList.remove('search-collapsed');
+        }
+    });
+
+    controladdin.addEventListener('focusout', function(event) {
+        if (jsonLabels.isSearchAreaCollapsible == true) {
+            if (!searcharea.contains(event.relatedTarget)) {
+                controladdin.classList.add('search-collapsed');
+            }
+        }
+    });
+    
     Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("OnAfterInit",[]);
 }
 

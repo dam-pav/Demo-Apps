@@ -51,7 +51,12 @@ page 50131 "Markdown"
                     DownloadFromStream(InStream, ExportTxt, '', '*.md', savedFileName);
                 end;
 
-                trigger ContentChanged(data: Text)
+                trigger OnChange(data: Text)
+                begin
+                    MarkdownText := data;
+                end;
+
+                trigger OnFocusOut(data: Text)
                 begin
                     MarkdownText := data;
                 end;
@@ -113,6 +118,7 @@ page 50131 "Markdown"
 
     trigger OnInit()
     begin
+        jsonLabels.Add('isSearchAreaCollapsible', false);
         jsonLabels.Add('lblSearchFor', lblSearch);
         jsonLabels.Add('lblReplaceWith', lblReplaceWith);
         jsonLabels.Add('lblIgnoreCase', lblIgnoreCase);

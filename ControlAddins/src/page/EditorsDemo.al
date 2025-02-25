@@ -36,6 +36,9 @@ page 50132 "Editors Demo"
                     MultiLine = true;
                 }
             }
+            /*group(MarkdownPreview)
+            {
+                Caption = 'Markdown Preview';*/
             usercontrol(MarkdownView; "Markdown View")
             {
                 ApplicationArea = All;
@@ -52,6 +55,7 @@ page 50132 "Editors Demo"
                 end;
 
             }
+            /*}*/
         }
     }
     actions
