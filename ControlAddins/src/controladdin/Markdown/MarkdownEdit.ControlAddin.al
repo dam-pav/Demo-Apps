@@ -4,9 +4,9 @@ controladdin "Markdown"
     VerticalShrink = true;
     HorizontalStretch = true;
     HorizontalShrink = true;
-    Scripts = 'src/scripts/marked.min.js', 'src/scripts/purify.js', 'src/scripts/markdown.js';
-    StartupScript = 'src/scripts/startup.js';
-    StyleSheets = 'src/scripts/markdown.css';
+    Scripts = './marked.min.js', './purify.js', './markdownedit.js';
+    StartupScript = './startup.js';
+    StyleSheets = './markdownedit.css';
 
     event ControlReady();
     event SaveRequested(data: Text);

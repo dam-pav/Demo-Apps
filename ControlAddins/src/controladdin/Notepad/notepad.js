@@ -122,9 +122,10 @@ function Init(jsonLabels) {
     });
     
     Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("OnAfterInit",[]);
+    console.log("A notepad control has been initialized.");
 }
 
-function Load(data) {
+function SetContent(data) {
     const textarea = document.getElementById('notepad');
     if (textarea) {
         textarea.value = data;
@@ -141,6 +142,6 @@ function SetEditable(editable) {
 function RequestSave() {
     const textarea = document.getElementById('notepad');
     if (textarea) {
-        Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("SaveRequested",[textarea.value]);
+        Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("OnSaveRequested",[textarea.value]);
     }
 }

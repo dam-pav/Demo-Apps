@@ -16,7 +16,7 @@ page 50130 "Notepad"
                 ApplicationArea = all;
 
 
-                trigger ControlReady()
+                trigger OnReady()
                 begin
                     CurrPage.Notepad.Init(jsonLabels);
                 end;
@@ -24,10 +24,10 @@ page 50130 "Notepad"
                 trigger OnAfterInit()
                 begin
                     if notepadText <> '' then
-                        CurrPage.Notepad.Load(notepadText);
+                        CurrPage.Notepad.SetContent(notepadText);
                 end;
 
-                trigger SaveRequested(data: Text)
+                trigger OnSaveRequested(data: Text)
                 var
                     TempBlob: Codeunit "Temp Blob";
                     OutStream: OutStream;
@@ -84,7 +84,7 @@ page 50130 "Notepad"
                     file.CreateInStream(InStream, TextEncoding::UTF8);
                     InStream.Read(data);
                     OnBeforeLoadFile(data);
-                    CurrPage.Notepad.Load(data);
+                    CurrPage.Notepad.SetContent(data);
                 end;
             }
             action(Save)
@@ -107,23 +107,15 @@ page 50130 "Notepad"
     }
 
     var
+        Helper: Codeunit "Notepad Helper";
         notepadText: Text;
         fileName: Text;
         jsonLabels: JsonObject;
-        lblSearch: Label 'Search...';
-        lblReplaceWith: Label 'Replace with...';
-        lblIgnoreCase: Label 'Ignore case';
-        lblFindNext: Label 'Find Next';
-        lblReplaceNext: Label 'Replace Next';
 
     trigger OnInit()
     begin
-        jsonLabels.Add('isSearchAreaCollapsible', false);
-        jsonLabels.Add('lblSearchFor', lblSearch);
-        jsonLabels.Add('lblReplaceWith', lblReplaceWith);
-        jsonLabels.Add('lblIgnoreCase', lblIgnoreCase);
-        jsonLabels.Add('lblFindNext', lblFindNext);
-        jsonLabels.Add('lblReplaceNext', lblReplaceNext);
+        Helper.SetLabels(jsonLabels);
+        Helper.SetCollapsible(jsonLabels, false);
     end;
 
     procedure SetContent(newNotepadText: Text; newFileName: Text)

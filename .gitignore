@@ -21,3 +21,4 @@ cache_*
 ~$*
 BC-Dev-Toolset/
 launch.json
+.qodo

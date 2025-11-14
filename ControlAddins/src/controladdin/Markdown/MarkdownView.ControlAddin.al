@@ -4,9 +4,9 @@ controladdin "Markdown View"
     MinimumHeight = 600;
     HorizontalStretch = true;
     VerticalShrink = true;
-    Scripts = 'src/scripts/marked.min.js', 'src/scripts/purify.js', 'src/scripts/markdownview.js';
-    StartupScript = 'src/scripts/startup.js';
-    StyleSheets = 'src/scripts/markdownview.css';
+    Scripts = './marked.min.js', './purify.js', './markdownview.js';
+    StartupScript = './startup.js';
+    StyleSheets = './markdownview.css';
 
     event ControlReady();
     event OnAfterInit();

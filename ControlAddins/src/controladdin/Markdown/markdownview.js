@@ -11,6 +11,7 @@ function Init() {
     control.appendChild(div);
 
     Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("OnAfterInit",[]);
+    console.log("A markdown control has been initialized.");
 }
 
 function Load(data) {

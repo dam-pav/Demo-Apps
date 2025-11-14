@@ -2,18 +2,18 @@ controladdin "Notepad"
 {
     VerticalStretch = true;
     HorizontalStretch = true;
-    Scripts = 'src/scripts/notepad.js';
-    StartupScript = 'src/scripts/startup.js';
-    StyleSheets = 'src/scripts/notepad.css';
+    Scripts = './notepad.js';
+    StartupScript = './startup.js';
+    StyleSheets = './notepad.css';
 
-    event ControlReady();
-    event SaveRequested(data: Text);
+    event OnReady();
+    event OnSaveRequested(data: Text);
     event OnChange(data: Text);
     event OnFocusOut(data: Text);
     event OnAfterInit();
 
     procedure Init(jsonLabels: JsonObject);
-    procedure Load(data: Text);
+    procedure SetContent(data: Text);
     procedure SetEditable(editable: Boolean);
     procedure RequestSave();
 }
