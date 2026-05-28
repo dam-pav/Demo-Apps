@@ -1,0 +1,23 @@
+{
+  "licenseFile": "",
+  "certificateFile": "",
+  "packageOutputPath": "",
+  "dependenciesPath": "",
+  "recordingsPath": "",
+  "pageScriptTestResultsPath": "",
+  "pageScriptTestHeaded": "false",
+  "sqlBackupPath": "",
+  "configurations": [
+    {
+      "name": "Local",
+      "serverType": "Container",
+      "targetType": "Dev",
+      "container": "DemoApps",
+      "environmentType": "Sandbox",
+      "includeTestToolkit": "false",
+      "authentication": "UserPassword",
+      "admin": "admin",
+      "password": "P@ssw0rd"
+    }
+  ]
+}

@@ -11,32 +11,34 @@
     },
     {
       "path": "ErrorManagement"
-    },
-    {
-      "path": "BC-Dev-Toolset"
     }
   ],
   "settings": {
-    "bcdevtoolset": [
-      {
-        "country": "w1",
-        "selectArtifact": "Closest",
-        "configurations": [
-          {
-            "name": "sample",
-            "serverType": "",
-            "targetType": "",
-            "server": "",
-            "serverInstance": "",
-            "port": "",
-            "environmentName": "",
-            "tenant": "",
-            "authentication": ""
-          }
-        ]
-      }
-    ],
-    "powershell.cwd": "BC-Dev-Toolset",
-    "liveServer.settings.multiRootWorkspaceName": "BC-Dev-Toolset"
+    "dam-pav.bcdevtoolset": {
+      "country": "w1",
+      "selectArtifact": "Closest",
+      "configurations": [
+        {
+          "name": "sample",
+          "serverType": "",
+          "targetType": "",
+          "server": "",
+          "serverInstance": "",
+          "container": "",
+          "port": "",
+          "environmentType": "",
+          "environmentName": "",
+          "includeTestToolkit": "",
+          "tenant": "",
+          "authentication": "",
+          "admin": "",
+          "password": "",
+          "databaseUser": "",
+          "databasePassword": "",
+          "remoteUser": "",
+          "remotePassword": ""
+        }
+      ]
+    }
   }
 }
